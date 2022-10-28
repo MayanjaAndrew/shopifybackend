@@ -11,13 +11,12 @@ router.route("/add").post((req, res) => {
   const productname = req.body.productname;
   const description = req.body.description;
   const quantity = Number(req.body.quantity);
-  const date = Date.parse(req.body.date);
+  /*const date = Date.parse(req.body.date);**/
 
   const newProduct = new Products({
     productname,
     description,
     quantity,
-    date,
   });
 
   newProduct
@@ -44,7 +43,7 @@ router.route("/update/:id").post((req, res) => {
       product.username = req.body.productname;
       product.description = req.body.description;
       product.quantity = Number(req.body.quantity);
-      product.date = Date.parse(req.body.date);
+      /*product.date = Date.parse(req.body.date);**/
 
       product
         .save()
